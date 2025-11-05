@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MouseController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MouseController : MonoBehaviour
     public ParticleSystem jetpack;
     private bool isDead = false;
     private uint coins = 0;
+    public Text coinsCollectedLabel;
 
     void Start()
     {
@@ -84,6 +86,7 @@ public class MouseController : MonoBehaviour
     void CollectCoin(Collider2D coinCollider)
     {
         coins++;
+        coinsCollectedLabel.text = coins.ToString();
         Destroy(coinCollider.gameObject);
     }
 }
