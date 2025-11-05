@@ -20,6 +20,7 @@ public class MouseController : MonoBehaviour
     public AudioClip coinCollectSound;
     public AudioSource jetpackAudio;
     public AudioSource footstepsAudio;
+    public ParallaxScroll parallax;
 
     void Start()
     {
@@ -52,6 +53,7 @@ public class MouseController : MonoBehaviour
         UpdateGroundedStatus();
         AdjustJetpack(jetpackActive);
         AdjustFootstepsAndJetpackSound(jetpackActive);
+        parallax.offset = transform.position.x;
     }
 
     void UpdateGroundedStatus()
